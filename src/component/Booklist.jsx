@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { BiAddToQueue } from "react-icons/bi";
+import { CiEdit } from "react-icons/ci";
+import { AiOutlineDelete } from "react-icons/ai";
+
 import axios from "axios";
 
 const Booklist = () => {
@@ -24,7 +28,7 @@ const Booklist = () => {
       <h1 className="title">Books</h1>
       <h2 className="subtitle">List Books</h2>
       <Link to="/books/add" className="button is-primary mb-2">
-        Add Book
+        Add Book <BiAddToQueue />
       </Link>
       <table className="table is-striped is-fullwidth">
         <thead>
@@ -54,13 +58,14 @@ const Booklist = () => {
                   to={`/books/edit/${book.uuid}`}
                   className="button is-small is-info"
                 >
-                  Edit
+                  Edit <CiEdit />
                 </Link>
                 <button
                   onClick={() => deleteBook(book.uuid)}
-                  className="button is-small is-danger"
+                  className="button is-small is-danger "
+                  icon="fa-solid fa-arrow-right-to-bracket"
                 >
-                  Delete
+                  Delete <AiOutlineDelete />
                 </button>
               </td>
             </tr>
